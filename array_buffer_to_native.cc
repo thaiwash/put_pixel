@@ -12,7 +12,7 @@ struct fb_var_screeninfo vinfo;
 struct fb_fix_screeninfo finfo;
 long int screensize = 0;
 char *fbp = 0;
-int x = 0, y = 0;
+unsigned int x = 0, y = 0;
 long int location = 0;
 
 void init_framebuffer() {
@@ -81,7 +81,7 @@ void close_framebuffer() {
 static void ArrayConsumer(const int32_t* array, const size_t length) {
     
   if (length != vinfo.xres*vinfo.yres*3) {
-    printf("Warning: Array size must fill the screen (must be exactly %i)", vinfo.xres*vinfo.yres*3);
+    printf("Warning: Array size must be exactly screen width times screen height times the number of colors (%i * %i * 3 = %i)", vinfo.xres, vinfo.yres, vinfo.xres*vinfo.yres*3);
   } else {
     set_pixels(array);
   }

@@ -17,7 +17,6 @@ function clear_screen(color) {
 var color = 0
 var time = (new Date()).getTime()
 
-console.log("How many millsecs does it take to draw 100 frames of black and white flicker")
 for (var i = 0; i < 100; i ++) {
 	if (color == 0) {
 		color = 255
@@ -26,6 +25,7 @@ for (var i = 0; i < 100; i ++) {
 	}
 	clear_screen(color)
 }
-console.log(time - (new Date()).getTime()+"\n")
+console.log("How many millsecs does it take to draw 100 frames of black and white flicker")
+console.log(((new Date()).getTime() - time)+"\n")
 
 
