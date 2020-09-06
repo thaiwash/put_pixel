@@ -3,4 +3,4 @@ build:
 
 run:
 	node-gyp rebuild
-	node index.js
+	node test.js

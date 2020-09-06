@@ -53,8 +53,8 @@ void init_framebuffer() {
 void set_pixels(const int32_t* array) {
     int count = 0;
     
-    for (y = 0; y < 2560; y++) {
-        for (x = 0; x < 1440; x++) {
+    for (y = 0; y < vinfo.yres; y++) {
+        for (x = 0; x < vinfo.xres; x++) {
 
             location = (x) * (vinfo.bits_per_pixel/8) +
                        (y) * finfo.line_length;
@@ -79,8 +79,9 @@ void close_framebuffer() {
 }
 
 static void ArrayConsumer(const int32_t* array, const size_t length) {
-  if (length != 1440*2560*3) {
-    printf("Warning: Array size must fill the screen (must be exactly %i)", 1440*2560*3);
+    
+  if (length != vinfo.xres*vinfo.yres*3) {
+    printf("Warning: Array size must fill the screen (must be exactly %i)", vinfo.xres*vinfo.yres*3);
   } else {
     set_pixels(array);
   }

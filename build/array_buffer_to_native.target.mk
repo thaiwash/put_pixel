@@ -42,7 +42,7 @@ INCS_Debug := \
 	-I/usr/include/nodejs/deps/uv/include \
 	-I/usr/include/nodejs/deps/zlib \
 	-I/usr/include/nodejs/deps/v8/include \
-	-I/home/pi/project/VROS/letsC/node_addon/node_modules/node-addon-api
+	-I/home/pi/project/PutPixel/node_modules/node-addon-api
 
 DEFS_Release := \
 	'-DNODE_GYP_MODULE_NAME=array_buffer_to_native' \
@@ -81,7 +81,7 @@ INCS_Release := \
 	-I/usr/include/nodejs/deps/uv/include \
 	-I/usr/include/nodejs/deps/zlib \
 	-I/usr/include/nodejs/deps/v8/include \
-	-I/home/pi/project/VROS/letsC/node_addon/node_modules/node-addon-api
+	-I/home/pi/project/PutPixel/node_modules/node-addon-api
 
 OBJS := \
 	$(obj).target/$(TARGET)/array_buffer_to_native.o
